@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F73959C61D7F972D00BBB61D /* Soldier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73959C51D7F972D00BBB61D /* Soldier.swift */; };
+		F73959C81D7F977600BBB61D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73959C71D7F977600BBB61D /* Player.swift */; };
+		F73959CA1D7F995B00BBB61D /* Orc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73959C91D7F995B00BBB61D /* Orc.swift */; };
 		F7D979671D66206C008EE291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D979661D66206C008EE291 /* AppDelegate.swift */; };
 		F7D979691D66206C008EE291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D979681D66206C008EE291 /* ViewController.swift */; };
 		F7D9796C1D66206C008EE291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D9796A1D66206C008EE291 /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F73959C51D7F972D00BBB61D /* Soldier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Soldier.swift; sourceTree = "<group>"; };
+		F73959C71D7F977600BBB61D /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		F73959C91D7F995B00BBB61D /* Orc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orc.swift; sourceTree = "<group>"; };
 		F7D979631D66206C008EE291 /* OOP2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OOP2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D979661D66206C008EE291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7D979681D66206C008EE291 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +112,9 @@
 				F7D979721D66206C008EE291 /* LaunchScreen.storyboard */,
 				F7D979751D66206C008EE291 /* Info.plist */,
 				F7D9796D1D66206C008EE291 /* OOP2.xcdatamodeld */,
+				F73959C51D7F972D00BBB61D /* Soldier.swift */,
+				F73959C71D7F977600BBB61D /* Player.swift */,
+				F73959C91D7F995B00BBB61D /* Orc.swift */,
 			);
 			path = OOP2;
 			sourceTree = "<group>";
@@ -259,8 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F73959C81D7F977600BBB61D /* Player.swift in Sources */,
 				F7D9796F1D66206C008EE291 /* OOP2.xcdatamodeld in Sources */,
 				F7D979691D66206C008EE291 /* ViewController.swift in Sources */,
+				F73959C61D7F972D00BBB61D /* Soldier.swift in Sources */,
+				F73959CA1D7F995B00BBB61D /* Orc.swift in Sources */,
 				F7D979671D66206C008EE291 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +421,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jeremy.OOP2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -420,6 +433,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jeremy.OOP2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -488,6 +502,7 @@
 				F7D979901D66206C008EE291 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7D979911D66206C008EE291 /* Build configuration list for PBXNativeTarget "OOP2Tests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +511,7 @@
 				F7D979931D66206C008EE291 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7D979941D66206C008EE291 /* Build configuration list for PBXNativeTarget "OOP2UITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +520,7 @@
 				F7D979961D66206C008EE291 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
