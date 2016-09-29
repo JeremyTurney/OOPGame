@@ -10,7 +10,7 @@ import Foundation
 
 class Soldier: Player
 {
-    private var _name: String = "Player"
+    fileprivate var _name: String = "Player"
     
     var name: String
     {

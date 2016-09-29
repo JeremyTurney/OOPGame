@@ -31,7 +31,7 @@ class ViewController: UIViewController
     
     var player1: Player!
     var player2: Player!
-    var timer = NSTimer()
+    var timer = Timer()
     var count: Int = 3
     var player1Type: Int?
     var player2Type: Int?
@@ -50,25 +50,25 @@ class ViewController: UIViewController
 
     @IBOutlet var onOrcBtnPressed: UIButton!
    
-    @IBAction func onOrcBtnPressed(sender: AnyObject)
+    @IBAction func onOrcBtnPressed(_ sender: AnyObject)
     {
        if (player1 == nil)
        {
             player1Type = 1
             player1 = Orc(Name: "Orc1", HP: 100)
-            player1Orc.hidden = false
-            player1HP.hidden = false
+            player1Orc.isHidden = false
+            player1HP.isHidden = false
             chooseCharacterLbl.text = "Player 2 choose your character"
         }
         else if (player1 != nil && player2 == nil)
         {
             player2Type = 1
             player2 = Orc(Name: "Orc2", HP: 100)
-            player2Orc.hidden = false
-            player2HP.hidden = false
-            onOrcBtnPressed.hidden = true
-            onSoldierBtnPressed.hidden = true
-            chooseCharacterLbl.hidden = true
+            player2Orc.isHidden = false
+            player2HP.isHidden = false
+            onOrcBtnPressed.isHidden = true
+            onSoldierBtnPressed.isHidden = true
+            chooseCharacterLbl.isHidden = true
             gameLabel()
         }
         else
@@ -81,7 +81,7 @@ class ViewController: UIViewController
 
    @IBOutlet var onSoldierBtnPressed: UIButton!
     
-    @IBAction func attackBtn1(sender: AnyObject)
+    @IBAction func attackBtn1(_ sender: AnyObject)
     {
         player1.attack()
         
@@ -105,17 +105,17 @@ class ViewController: UIViewController
         if (!player2.isAlive)
         {
             gameLbl.text = "\(player2.playerName()) has been slain!"
-            attackBtn1.hidden = true
-            attackBtn2.hidden = true
+            attackBtn1.isHidden = true
+            attackBtn2.isHidden = true
             restart()
             
         }
-        self.attackBtn1.enabled = false
-        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.enableButton1), userInfo: nil, repeats: false)
+        self.attackBtn1.isEnabled = false
+        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(ViewController.enableButton1), userInfo: nil, repeats: false)
        
         
     }
-    @IBAction func attackBtn2(sender: AnyObject)
+    @IBAction func attackBtn2(_ sender: AnyObject)
     {
         player2.attack()
         
@@ -139,26 +139,26 @@ class ViewController: UIViewController
         if (!player1.isAlive)
         {
             gameLbl.text = "\(player1.playerName()) has been slain!"
-            attackBtn1.hidden = true
-            attackBtn2.hidden = true
+            attackBtn1.isHidden = true
+            attackBtn2.isHidden = true
             restart()
             
         }
-        self.attackBtn2.enabled = false
-        NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.enableButton2), userInfo: nil, repeats: false)
+        self.attackBtn2.isEnabled = false
+        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(ViewController.enableButton2), userInfo: nil, repeats: false)
         
 
     }
-    @IBAction func OnSoldier2BtnPressed(sender: AnyObject)
+    @IBAction func OnSoldier2BtnPressed(_ sender: AnyObject)
     {
     }
-    @IBAction func onSoldierBtnPressed(sender: AnyObject)
+    @IBAction func onSoldierBtnPressed(_ sender: AnyObject)
     {
         if (player1 == nil)
         {
             player1 = Soldier(Name: "Soldier1", HP: 100)
-            player1Soldier.hidden = false
-            player1HP.hidden = false
+            player1Soldier.isHidden = false
+            player1HP.isHidden = false
             chooseCharacterLbl.text = "Player 2 choose your character"
             
             
@@ -166,11 +166,11 @@ class ViewController: UIViewController
         else if (player1 != nil && player2 == nil)
         {
             player2 = Soldier(Name: "Soldier2", HP: 100)
-            player2Soldier.hidden = false
-            player2HP.hidden = false
-            onOrcBtnPressed.hidden = true
-            onSoldierBtnPressed.hidden = true
-            chooseCharacterLbl.hidden = true
+            player2Soldier.isHidden = false
+            player2HP.isHidden = false
+            onOrcBtnPressed.isHidden = true
+            onSoldierBtnPressed.isHidden = true
+            chooseCharacterLbl.isHidden = true
             gameLabel()
         }
 
@@ -178,22 +178,22 @@ class ViewController: UIViewController
     
     @IBOutlet var Quit: UIButton!
     @IBOutlet var NewGame: UIButton!
-    @IBAction func onNewGamePressed(sender: AnyObject)
+    @IBAction func onNewGamePressed(_ sender: AnyObject)
     {
-        gameLbl.hidden = true
-        NewGame.hidden = true
-        Quit.hidden = true
+        gameLbl.isHidden = true
+        NewGame.isHidden = true
+        Quit.isHidden = true
         player1 = nil
         player2 = nil
         chooseCharacterLbl.text = "Player 1 choose your character"
-        onOrcBtnPressed.hidden = false
-        onSoldierBtnPressed.hidden = false
-        onSoldierBtnPressed.hidden = false
-        onOrcBtnPressed.hidden = false
+        onOrcBtnPressed.isHidden = false
+        onSoldierBtnPressed.isHidden = false
+        onSoldierBtnPressed.isHidden = false
+        onOrcBtnPressed.isHidden = false
         resetCount()
         
     }
-    @IBAction func onQuitPressed(sender: AnyObject)
+    @IBAction func onQuitPressed(_ sender: AnyObject)
     {
         exit(0)
     }
@@ -201,8 +201,8 @@ class ViewController: UIViewController
     
     func gameLabel()
     {
-        gameLbl.hidden = false
-         timer =  NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.gameLabel), userInfo: nil, repeats: false)
+        gameLbl.isHidden = false
+         timer =  Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(ViewController.gameLabel), userInfo: nil, repeats: false)
        
         if (count != 0)
         {
@@ -214,8 +214,8 @@ class ViewController: UIViewController
         {
             timer.invalidate()
             gameLbl.text = "Attack!"
-            attackBtn1.hidden = false
-            attackBtn2.hidden = false
+            attackBtn1.isHidden = false
+            attackBtn2.isHidden = false
         }
     }
     
@@ -256,27 +256,27 @@ class ViewController: UIViewController
     {
         player1HP.text = "100 HP"
         player2HP.text = "100 HP"
-        player1HP.hidden = true
-        player1Soldier.hidden = true
-        player1Orc.hidden = true
-        player2HP.hidden = true
-        player2Soldier.hidden = true
-        player2Orc.hidden = true
-        chooseCharacterLbl.hidden = false
+        player1HP.isHidden = true
+        player1Soldier.isHidden = true
+        player1Orc.isHidden = true
+        player2HP.isHidden = true
+        player2Soldier.isHidden = true
+        player2Orc.isHidden = true
+        chooseCharacterLbl.isHidden = false
         chooseCharacterLbl.text = "Choose an option"
-        NewGame.hidden = false
-        Quit.hidden = false
+        NewGame.isHidden = false
+        Quit.isHidden = false
     }
     
     
     func enableButton1()
     {
-        self.attackBtn1.enabled = true
+        self.attackBtn1.isEnabled = true
         
     }
     func enableButton2()
     {
-        self.attackBtn2.enabled = true
+        self.attackBtn2.isEnabled = true
     }
     
 }
